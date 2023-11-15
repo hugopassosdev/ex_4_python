@@ -1,13 +1,16 @@
+nome = input("Insira seu nome completo: ")
+
 execute = True
 
 while(execute == True):
-    nome = input("Insira seu nome completo: ")
-    ano_nascimento = int(input("Insira o ano o qual nasceu: "))
+    ano_nascimento = int(input('Insira o ano o qual nasceu: '))
     try:
-        if(ano_nascimento >= 1922) and (ano_nascimento <= 2021):
-            idade = 2022 - ano_nascimento
-            print(f'{nome} possui {idade} anos!') 
+        if(ano_nascimento < 1922) or (ano_nascimento > 2021):
+            print('Favor digitar um ano entre 1922 e 2021!')
+            continue
         else:
-            print('Você digitou uma data de nascimento inválida!')
+            idade = 2022 - ano_nascimento
+            print(f'{nome} possui {idade} anos em 2022!')
+            break 
     except:
-        print('Favor digitar um caractere, favor digitar uma data.')
+        print('O ano deve ser um número inteiro.')
